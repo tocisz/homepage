@@ -23,8 +23,8 @@ Connect:
 STM32   PA9  --- RX   UART-USB
         PA10 --- TX
 ```
-![STM32](0001-1.jpg)
-![USB-UART](0001-2.jpg)
+![STM32](001-1.jpg)
+![USB-UART](001-2.jpg)
 
 Get the flash file from [mecrisp-stellaris](https://github.com/jeelabs/mecrisp-stellaris).
 
