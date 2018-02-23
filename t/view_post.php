@@ -22,7 +22,7 @@ if (file_exists($posts_url) && preg_match('/[^a-z_\-0-9]/i', $posts_url))
     $output = MarkdownExtra::defaultTransform($post_content);
 
     // Make it pretty 
-    $title = $requested_post;
+    $title = $post->format_blog_title($requested_post);
     require 'layouts/header.php';
 ?>
 <div class="container-fluid">

@@ -64,6 +64,6 @@ class Post {
      */
     function format_blog_title($title)
     {
-        return ucfirst(str_replace(array('posts_source/', '.md', '-'), array('', '', ' '), $title));
+        return ucfirst(str_replace(array(POSTS_DIR, '/', '.md', '-'), array('', '', '', ' '), $title));
     }
 }
