@@ -16,8 +16,7 @@ $directory = POSTS_DIR . '/';
 if (glob($directory . '*.md') != FALSE)
 {
     $file_count = count(glob($directory . '*.md'));
-    $files = glob($directory . '*.md', GLOB_NOSORT);
-    array_multisort(array_map('filemtime', $files), SORT_NUMERIC, SORT_DESC, $files);
+    $files = array_reverse(glob($directory . '*.md'));
     echo '<ul>';
     foreach ($files as $file)
     {
