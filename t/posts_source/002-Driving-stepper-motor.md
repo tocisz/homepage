@@ -9,6 +9,16 @@ While drinking beer I told my friend about it and some time later for birthday I
 Tearing DVD apart was fun. I was most impressed when I discovered lens floating in magnetic field created by two strong magnets.
 I found an [engineering class materials](http://www.control.lth.se/media/Education/EngineeringProgram/FRTN10/2011/Lec05_DVDplayer_notes2011.pdf) describing this incredible stuff.
 
+> Imagine the following: You are traveling at half the speed of light, along a line
+> from which you may only deviate 1 m. The line is not straight but oscillates up to
+> 4.5 km sideways, 23 times per second.
+>
+> This is a scaled version of the control task in a DVD player, where the pick-up
+> head needs to follow the bit-track. The real numbers are 3.5 m/s, with maximally
+> 0.022 µm deviations from the track. A disk is always slightly asymmetric, causing
+> it to oscillate up to 100 µm per rotation, and the rotation speed is up to 23 Hz
+> (for single speed).
+
 Since it was my first experience with stepper motors I started slowly.
 First I did simple board with 3 [buttons](https://www.aliexpress.com/item/10pcs-NEW-8X8mm-Blue-Cap-Self-locking-Type-Square-Button-Switch-8-8-mm/32826635282.html?spm=2114.search0104.3.14.7f2bffae2BawFH&ws_ab_test=searchweb0_0,searchweb201602_1_10152_10151_10065_10344_10068_10342_10343_10340_10341_10084_10083_10618_10630_10304_10307_10301_5711211_10313_10059_5722311_10534_100031_10103_10627_10626_10624_10623_10622_10621_10620_5711311_10142,searchweb201603_38,ppcSwitch_3&algo_expid=eb111eaa-9159-42b4-abc8-dd5f4c43b417-2&algo_pvid=eb111eaa-9159-42b4-abc8-dd5f4c43b417&priceBeautifyAB=0) to manually control bipolar stepper motor.
 Each of these buttons inside has two two-position switches. Something like:
