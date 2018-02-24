@@ -4,9 +4,9 @@ date: 2018-02-24
 # Driving stepper motor
 
 Some time ago I came across tutorial [how to make mini plotter from two CD/DVD drives](http://www.instructables.com/id/Arduino-Mini-CNC-Plotter-Machine-from-dvd-drives/).
-While drinking beer I said my friend about it and some time later for birthday I got broken DVD drive from him.
+While drinking beer I told my friend about it and some time later for birthday I got broken DVD drive from him.
 
-Tearing it apart was fun. I was most impressed when I discovered lens floating in magnetic field created by two strong magnets.
+Tearing DVD apart was fun. I was most impressed when I discovered lens floating in magnetic field created by two strong magnets.
 I found an [engineering class materials](http://www.control.lth.se/media/Education/EngineeringProgram/FRTN10/2011/Lec05_DVDplayer_notes2011.pdf) describing this incredible stuff.
 
 Since it was my first experience with stepper motors I started slowly.
