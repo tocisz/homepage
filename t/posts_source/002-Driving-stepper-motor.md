@@ -11,7 +11,7 @@ I found an [engineering class materials](http://www.control.lth.se/media/Educati
 
 Since it was my first experience with stepper motors I started slowly.
 First I did simple board with 3 [buttons](https://www.aliexpress.com/item/10pcs-NEW-8X8mm-Blue-Cap-Self-locking-Type-Square-Button-Switch-8-8-mm/32826635282.html?spm=2114.search0104.3.14.7f2bffae2BawFH&ws_ab_test=searchweb0_0,searchweb201602_1_10152_10151_10065_10344_10068_10342_10343_10340_10341_10084_10083_10618_10630_10304_10307_10301_5711211_10313_10059_5722311_10534_100031_10103_10627_10626_10624_10623_10622_10621_10620_5711311_10142,searchweb201603_38,ppcSwitch_3&algo_expid=eb111eaa-9159-42b4-abc8-dd5f4c43b417-2&algo_pvid=eb111eaa-9159-42b4-abc8-dd5f4c43b417&priceBeautifyAB=0) to manually control bipolar stepper motor.
-These buttons are inside have two two-position switches, so something like:
+Each of these buttons inside has two two-position switches. Something like:
 ```
  off               on
       .-- 2             .-- 2
