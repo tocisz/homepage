@@ -33,8 +33,6 @@ By using this board I was able to verify that stepper actually works and what re
 Knowing that it works I connected it trough [L293D](http://www.alldatasheet.com/view.jsp?Searchword=L293D) to
 [Forth enabled blue pill](http://tomasz-cichocki.pl/t/posts/001-play-with-forth-and-STM32). Surprisingly, everything worked with no problems.
 
-![blue pill with stepper](002-3.jpg)
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mt8P-PPIaGw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 I tried full stepping and half stepping. I think half stepping gives less vibrations and I see no difference in torque...
