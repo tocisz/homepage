@@ -7,7 +7,7 @@ Some time ago I came across tutorial [how to make a mini plotter from two CD/DVD
 While drinking beer I told my friend about it and some time later as a birthday present I got a broken DVD drive from him.
 
 Tearing the DVD apart was fun. I was most impressed when I discovered lens floating in a strong magnetic field created by two magnets.
-I found an [engineering class materials](http://www.control.lth.se/media/Education/EngineeringProgram/FRTN10/2011/Lec05_DVDplayer_notes2011.pdf) describing this incredible stuff.
+I found an [engineering class materials](http://www.control.lth.se/media/Education/EngineeringProgram/FRTN10/2011/Lec05_DVDplayer_notes2011.pdf) about this incredible stuff.
 
 > Imagine the following: You are traveling at half the speed of light, along a line
 > from which you may only deviate 1 m. The line is not straight but oscillates up to
