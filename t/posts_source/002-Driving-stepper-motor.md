@@ -32,7 +32,7 @@ Each of these buttons inside has two two-position switches. Something like:
      /
 4 --* .-- 6       4 --*-.-- 6
 ```
-By connecting them right way I was able to reverse current flow for one coil with one button; Second button for second coil; Third button is a main on/off switch.
+By connecting them right way I was able to reverse current flow for one coil with one button; Second button for the second coil; Third button is a main on/off switch.
 
 ![3 buttons board](002-1.jpg)
 
@@ -46,4 +46,4 @@ Knowing that it works I connected it trough [L293D](http://www.alldatasheet.com/
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mt8P-PPIaGw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 I tried full-stepping and half-stepping. I think half-stepping gives less vibrations and I see no difference in a torque...
-Please see [Forth source code](https://github.com/tocisz/forthplay/tree/master/stepper) if you are interested.
+Please see [Forth code I wrote](https://github.com/tocisz/forthplay/tree/master/stepper) to drive the motor if you are interested.
