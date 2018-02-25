@@ -9,3 +9,7 @@ blockquote {
   margin: 1.5em 10px;
   padding: 0.5em 10px;
 }
+
+code {
+  background: #f9f9f9;
+}
