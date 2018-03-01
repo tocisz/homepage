@@ -45,54 +45,15 @@ But what if we want to simulate pendulum movement?
 
 Position in time can be described by the following equation:
 
-<math>
-    <mi>x</mi>
-    <mo>=</mo>
-    <mrow>
-        <mi>r</mi>
-        <mi>sin</mi>
-        <mo>(</mo>
-        <mi>ω</mi>
-        <mi>t</mi>
-        <mo>)</mo>
-    </mrow>
-</math>
+$$x = r \sin{\omega t}$$
 
 What we need is not a position in time, but a timestamp for each position. So we need to inverse it the equation:
 
-<math>
-    <mi>t</mi>
-    <mo>=</mo>
-    <mrow>
-      <mfrac><mn>1</mn><mi>ω</mi></mfrac>
-        <mi>arcsin</mi>
-        <mo>(</mo>
-        <mfrac><mi>x</mi><mi>r</mi></mfrac>
-        <mo>)</mo>
-    </mrow>
-</math>
+$$t = {1 \over \omega} \arcsin{x \over r} $$
 
 What we are really interested in is derivative of this function. The derivative tells how long we should wait in each position:
 
-<math>
-  <mrow>
-    <mi>t</mi><mo>'</mo>
-  </mrow>
-    <mo>=</mo>
-    <mrow>
-      <mfrac><mn>1</mn><mrow><mi>ω</mi><mi>r</mi></mrow></mfrac>
-      <mfrac><mn>1</mn>
-       <sqrt>
-        <mn>1</mn>
-        <mo>-</mo>
-        <msup>
-          <mfrac><mi>x</mi><mi>r</mi></mfrac>
-          <mn>2</mn>
-        </msup>
-       </sqrt>
-      </mfrac>
-    </mrow>
-</math>
+$$t' = {1 \over \omega r} { 1 \over \sqrt{1-({x \over r})^2} } $$
 
 Calculating this with `mecrisp-stellaris` was a challenge for a novice like me, but I succeeded:
 ```forth
