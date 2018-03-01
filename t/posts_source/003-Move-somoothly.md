@@ -43,7 +43,7 @@ it moves without problems.
 ## Pendulum
 But what if we want to simulate pendulum movement?
 
-Position in time can be described by the following equation:
+A position in time can be described by the following equation:
 
 $$x = r \sin{\omega t}$$
 
@@ -51,7 +51,7 @@ What we need is not a position in time, but a timestamp for each position. So we
 
 $$t = {1 \over \omega} \arcsin{x \over r} $$
 
-What we are really interested in is derivative of this function. The derivative tells how long we should wait in each position:
+What we are really interested in is a derivative of this function. The derivative tells how long we should wait in each position:
 
 $$t' = {1 \over \omega r} { 1 \over \sqrt{1-({x \over r})^2} } $$
 
