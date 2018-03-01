@@ -47,7 +47,7 @@ A position in time can be described by the following equation:
 
 $$x = r \sin{\omega t}$$
 
-What we need is not a position in time, but a timestamp for each position. So we need to inverse it the equation:
+What we need is not a position in time, but a timestamp for each position. So we need to inverse the equation:
 
 $$t = {1 \over \omega} \arcsin{x \over r} $$
 
