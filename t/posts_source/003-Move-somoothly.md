@@ -41,7 +41,7 @@ but when I start from 10 ms delay and than gradually lower it to 0.8 ms
 it moves without problems.
 
 ## Pendulum
-But what if we want to simulate pendulum movement?
+Let's try something more complicated. Nice and natural movement is a pendulum movement.
 
 A position in time can be described by the following equation:
 
