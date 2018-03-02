@@ -41,7 +41,7 @@ but when I start from 10 ms delay and than gradually lower it to 0.8 ms
 it moves without problems.
 
 ## Pendulum
-But what if we want to simulate pendulum movement?
+Let's try something more complicated. Nice and natural movement is a pendulum movement.
 
 A position in time can be described by the following equation:
 
@@ -59,70 +59,4 @@ Calculating this with `mecrisp-stellaris` was a challenge for a novice like me, 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tZ4Z8J8wuLw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-```forth
-\ Fast integer square root. Algorithm from the book "Hacker's Delight".
-: sqrt ( u -- u^1/2 )
-  [
-  $2040 h, \   movs r0, #0x40
-  $0600 h, \   lsls r0, #24
-  $2100 h, \   movs r1, #0
-  $000A h, \ 1:movs r2, r1
-  $4302 h, \   orrs r2, r0
-  $0849 h, \   lsrs r1, #1
-  $4296 h, \   cmp r6, r2
-  $D301 h, \   blo 2f
-  $1AB6 h, \   subs r6, r2
-  $4301 h, \   orrs r1, r0
-  $0880 h, \ 2:lsrs r0, #2
-  $D1F6 h, \   bne 1b
-  $000E h, \   movs r6, r1
-  ]
-  1-foldable
-;
-
-\ calculate sqrt for s31,32 < 1
-: 0sqrt ( d -- sqrt[d] )
-  drop \ should be 0 anyway
-  sqrt 16 lshift \ sqrt and correct point
-  0 \ add integer part back
-  1-foldable
-;
-
-\ 1 over sqrt ( 1 - (x/256)^2 )
-: darctg ( n -- df )
-  dup 0=
-  if drop 1,0
-  else
-    0 swap \ convert integer to df
-    256,0 f/ \ x = x/256
-    2dup f* \ x = x^2
-    1,0 2swap d- \ x = 1-x
-    0sqrt \ x = sqrt(x)
-    1,0 2swap f/ \ x = 1/x
-  then
-  1-foldable
-;
-
-: pendulum ( min-delay step -- delay )
-  darctg
-  rot 0 swap f*
-  nip
-  1-foldable
-;
-
-256 constant motor.move-profile-size \ 256 values plus counter
-800 constant motor.min-delay
-
-create motor.move-profile motor.move-profile-size 1+ cells allot
-: init-pendulum-profile ( -- )
-  motor.move-profile-size motor.move-profile ! \ size
-  0 \ counter
-  motor.move-profile cell+
-  dup motor.move-profile-size 1- cells +
-  do
-    dup motor.min-delay swap pendulum i !
-    1+
-  -1 cells +loop
-  drop
-;
-```
+Full [source code is on GitHub](https://github.com/tocisz/forthplay/blob/master/stepper/pendulum.fs).
