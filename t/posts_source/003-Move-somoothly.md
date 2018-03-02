@@ -80,7 +80,7 @@ Calculating this with `mecrisp-stellaris` was a challenge for a novice like me, 
 \ calculate sqrt for s31,32 < 1
 : 0sqrt ( d -- sqrt[d] )
   drop \ should be 0 anyway
-  sqrt $10000 * \ sqrt and correct point
+  sqrt 16 lshift \ sqrt and correct point
   0 \ add integer part back
   1-foldable
 ;
