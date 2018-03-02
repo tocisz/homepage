@@ -1,7 +1,7 @@
 ===
 date: 2018-02-27
 ===
-# Move smoothly
+# Digital pendulum
 ## Constant acceleration
 
 My intuition is that moving motor with constant speed from a start point to
