@@ -55,7 +55,7 @@ What we are really interested in is a derivative of this function. The derivativ
 
 $$t' = {1 \over \omega r} { 1 \over \sqrt{1-({x \over r})^2} } $$
 
-Calculating this with `mecrisp-stellaris` was a challenge for a novice like me, but I succeeded:
+Calculating this with `mecrisp-stellaris` was a challenge for a novice like me, but here it is:
 ```forth
 \ Fast integer square root. Algorithm from the book "Hacker's Delight".
 : sqrt ( u -- u^1/2 )
@@ -123,3 +123,5 @@ create motor.move-profile motor.move-profile-size 1+ cells allot
   drop
 ;
 ```
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tZ4Z8J8wuLw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
