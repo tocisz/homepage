@@ -14,3 +14,15 @@ pre {
   background-color: #f9f9f9;
   padding: 0.5em 10px;
 }
+
+footer {
+  padding: 4rem 0;
+  margin-top: 4rem;
+  background-color: #f7f7f7;
+}
+
+header {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  background-color: #f7f7f7;
+}
