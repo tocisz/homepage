@@ -28,7 +28,10 @@ if (file_exists($posts_url) && preg_match('/[^a-z_\-0-9]/i', $posts_url))
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 col-md-3 push-md-9 bd-sidebar">
-      <?php include_once 'index_raw.php'; ?>
+      <?php
+      $path_prefix = '';
+      include_once 'index_raw.php';
+      ?>
     </div>
     <div class="col-12 col-md-9 pull-md-3 bd-content">
       <?php echo $output; ?>

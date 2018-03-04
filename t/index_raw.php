@@ -7,7 +7,7 @@ if (glob($directory . '*.md') != FALSE)
     echo '<ul>';
     foreach ($files as $file)
     {
-        echo '<li><a href="posts' . $post->path_to_post($file) . '">' . $post->format_blog_title($file) . '</a></li>';
+        echo '<li><a href="' . $path_prefix . $post->path_to_post($file) . '">' . $post->format_blog_title($file) . '</a></li>';
     }
     echo '</ul>';
 }

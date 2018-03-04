@@ -13,5 +13,6 @@ include_once 'index_raw.php';
 ?>
 </div>
 <?php
+$path_prefix = 'posts/';
 require 'layouts/footer.php';
 ?>

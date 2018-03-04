@@ -12,15 +12,15 @@ class Post {
     function slugify($input)
     {
         $lines = explode("\n", $input);
-        
-        $a = array(); 
+
+        $a = array();
         $cur = array();
-        
+
         foreach($lines as $line)
         {
             if (empty($line) || strpos($line, ':') === false) continue;
             list($key, $value) = explode(': ', $line);
-            
+
             if (!array_key_exists($key, $cur))
             {
                 $cur[$key] = $value;
@@ -32,7 +32,7 @@ class Post {
                 $cur[$key] = $value;
             }
         }
-        
+
         $a[] = $cur;
         return $a;
     }
@@ -42,7 +42,7 @@ class Post {
      *
      * $file - The file to break apart.
      */
-    function split_file($file) 
+    function split_file($file)
     {
         return explode('===', $file, 3);
     }
@@ -54,7 +54,7 @@ class Post {
      */
     function path_to_post($title)
     {
-        return str_replace(array(POSTS_DIR, '.md'), array(''), $title);
+        return str_replace(array(POSTS_DIR+'/', '.md'), array(''), $title);
     }
 
     /**
