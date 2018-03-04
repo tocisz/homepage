@@ -1,4 +1,5 @@
 <?php
+$directory = POSTS_DIR . '/';
 if (glob($directory . '*.md') != FALSE)
 {
     $file_count = count(glob($directory . '*.md'));

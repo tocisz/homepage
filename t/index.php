@@ -9,13 +9,7 @@ require 'layouts/header.php';
 <div class="container-fluid">
 <?php
 echo "<h1>$title</h1>";
-$directory = POSTS_DIR . '/';
-
-// Ensure the directory isn't empty
-if (glob($directory . '*.md') != FALSE)
-{
-  include_once 'index_raw.php';
-}
+include_once 'index_raw.php';
 ?>
 </div>
 <?php
