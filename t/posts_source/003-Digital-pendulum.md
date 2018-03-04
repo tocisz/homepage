@@ -40,6 +40,9 @@ It really helps! With delay 0.8 ms between half-steps motor misses steps,
 but when I start from 10 ms delay and than gradually lower it to 0.8 ms
 it moves without problems.
 
+It's not constant acceleration though... Do you know why?
+[*Answer is here*](004-Constant-acceleration-revisited).
+
 ## Pendulum
 Let's try something more complicated. Nice and natural movement is a pendulum movement.
 
