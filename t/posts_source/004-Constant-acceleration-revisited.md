@@ -15,9 +15,9 @@ $$ t' = 10 (0.9)^x $$
 Which is almost equal to
 $$ t' = 10 e^{-{x \over 10}} $$
 
-By integrating this with assumption that \\(t(0) = 0\\), we get:
+By integrating this with assumption that \\(t(0) = 0\\), we get
 $$ t = 100 - 100 e^{-{x \over 10}} $$
-By solving for \\(x\\) we get:
+By solving for \\(x\\) we get
 $$ x = -10 \ln {{100 - t} \over 100} $$
 
 This is not a quadratic eqaution that I expected for constant acceleration!
