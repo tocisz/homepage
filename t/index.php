@@ -9,10 +9,10 @@ require 'layouts/header.php';
 <div class="container-fluid">
 <?php
 echo "<h1>$title</h1>";
-include_once 'index_raw.php';
+$path_prefix = 'posts/';
+require 'index_raw.php';
 ?>
 </div>
 <?php
-$path_prefix = 'posts/';
 require 'layouts/footer.php';
 ?>
