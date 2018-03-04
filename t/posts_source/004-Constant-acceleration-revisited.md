@@ -23,6 +23,8 @@ $$ x = -10 \ln {{100 - t} \over 100} $$
 This is not a quadratic eqaution that I expected for constant acceleration!
 Moreover it goes to \\(\infty\\) for \\(x \rightarrow 100\\).
 
+![Plot](004-1.png)
+
 Why is that? When delay becomes shorter, we execute more steps in an unit of time.
 Motor accelerates with each step, so when delay becomes shorter it accelerates
 more quickly.
