@@ -3,7 +3,7 @@ date: 2018-03-04
 ===
 # Constant acceleration revisited
 ## What is wrong?
-In [the last article](003-Digital-pendulum) first section is about constant
+In [the last article](003-Digital-pendulum) the first section is about constant
 acceleration... But is it really?
 
 The rule is to change delay for each step to be e.g. 0.9 of delay for previos
