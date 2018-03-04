@@ -10,7 +10,7 @@ The rule is to change delay for each step to be e.g. 0.9 of delay for previos
 step.
 $$ \Delta t_{i+1} = 0.9 \Delta t_i $$
 
-Continuos function that satisfies this equation is e.g. (starting from 10ms delay)
+Continuous function that satisfies this equation is e.g. (starting from 10ms delay)
 $$ t' = 10 (0.9)^x $$
 Which is almost equal to
 $$ t' = 10 e^{-{x \over 10}} $$
@@ -39,3 +39,5 @@ $$ t' = {1 \over {2 \sqrt {a x}}} $$
 
 I calculated it in Forth as [before](003-Digital-pendulum) I did for pendulum
 movement and now my stepper is really accelerating nicely.
+
+As usually, [source code is on GitHub](https://github.com/tocisz/forthplay/commit/e02fd5388582c144488917e9b2358a914b5311b0).
