@@ -8,7 +8,7 @@ acceleration... But is it really?
 
 The rule is to change delay for each step to be e.g. 0.9 of delay for previos
 step.
-$$ t_{i+1} = 0.9 t_i $$
+$$ \Delta t_{i+1} = 0.9 \Delta t_i $$
 
 Continuos function that satisfies this equation is e.g. (starting from 10ms delay)
 $$ t' = 10 (0.9)^x $$
