@@ -54,7 +54,7 @@ class Post {
      */
     function path_to_post($title)
     {
-        return str_replace(array(POSTS_DIR+'/', '.md'), array(''), $title);
+        return str_replace(array(POSTS_DIR.'/', '.md'), array(''), $title);
     }
 
     /**
