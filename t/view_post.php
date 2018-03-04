@@ -21,15 +21,19 @@ if (file_exists($posts_url) && preg_match('/[^a-z_\-0-9]/i', $posts_url))
     // Parse it!
     $output = MarkdownExtra::defaultTransform($post_content);
 
-    // Make it pretty 
+    // Make it pretty
     $title = $post->format_blog_title($requested_post);
     require 'layouts/header.php';
 ?>
 <div class="container-fluid">
-<?php
-    //var_export($metadata);
-    echo $output;
-?>
+  <div class="row">
+    <div class="col-12 col-md-3 push-md-9 bd-sidebar">
+      <?php include_once 'index_raw.php'; ?>
+    </div>
+    <div class="col-12 col-md-9 pull-md-3 bd-content">
+      <?php echo $output; ?>
+    </div>
+  </div>
 </div>
 <?php
     require 'layouts/footer.php';
