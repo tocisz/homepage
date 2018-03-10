@@ -8,7 +8,7 @@ These sensors detect magnetic field and are very practical when position of
 some mechanical elements needs to be detected contactlessly.
 
 You can find them in CD/DVD drives. The main motor that rotates CD/DVD disc
-is so called brushless DC motor. From operating point of view it is simillar
+is so called brushless DC motor. From the operating point of view it is similar
 to a stepper motor with a big step of 30 degrees (only 12 steps for full revolution).
 The particular type that I found in my scrap DVD has 3 inputs to drive the motor.
 ![BLDC motor from DVD](005-1.jpg)
@@ -23,7 +23,7 @@ C   + +   - -   + +   - - ...
 ```
 For more explanation see [this youtube video](https://youtu.be/ZAY5JInyHXY).
 
-But how does the control circuit of a motor know what is the position of the rotor
+But how does a control circuit of a motor know what is the position of the rotor
 and when it's the best time to switch to the next step in the sequence?
 Hall effect sensors can be used for that.
 
