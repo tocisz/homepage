@@ -74,7 +74,7 @@ Here is a plot of the readings I got when rotating motor manually.
 It looks like it can actually give quite a good precision. Much more
 than 30 degrees resolution one can get by reading sensors trough comparator
 as a digital input (as far as I know that's how it's usually used).
-![Plot of hall sensor readings](005-3.svg).
+![Plot of hall sensor readings](005-3.svg)
 
 *Question 1.*
 
