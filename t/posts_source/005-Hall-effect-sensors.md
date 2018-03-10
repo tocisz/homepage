@@ -9,11 +9,11 @@ some mechanical elements needs to be detected contactlessly.
 
 You can find them in CD/DVD drives. The main motor that rotates CD/DVD disc
 is so called brushless DC motor. From the operating point of view it is similar
-to a stepper motor with a big step of 30 degrees (only 12 steps for full revolution).
+to a stepper motor with a big step of 30 degrees (only 12 steps per full revolution).
 The particular type that I found in my scrap DVD has 3 inputs to drive the motor.
 ![BLDC motor from DVD](005-1.jpg)
 
-To drive it effectively motor control circuit has to put electrical current
+To drive it effectively a motor control circuit has to put electrical current
 trough 2 out of 3 inputs in the right sequence, e.g.:
 ```
   0 1 2 3 4 5 0 1 2 3 4 5 ...
@@ -34,15 +34,15 @@ be detected by these little sensors.
 ![Hall effect sensor below BLDC](005-2.jpg)
 
 The hardest part was connecting to it. Soldering thin wire with a simple soldering
-iron I have and my lack of soldering skills was not promising any success.
+iron and my lack of skills was not promising any success.
 As you can see on the first photo it looks ugly. But somehow it works...
 
 Usually two outputs of hall effect sensor are compared by comparator circuit
-and there is only binary output. But each of these sensors has 1 pins.
+and there is only one binary output from it. But each of these sensors has 4 pins.
 Two of them are shared by all three sensors, so I guess that it's `VCC` and `GND`.
 The other two I connected to ADC on the microcontroller.
 
-I noticed that when I rotate motor and one of two inputs is increasing voltage
+I noticed that when I rotate the motor and one of the outputs is increasing voltage
 than the other is decreasing voltage. So as a reading from the sensor I take
 a difference of readings of two outputs. Below is a complete program I used
 to get the readings:
