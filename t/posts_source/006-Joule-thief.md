@@ -12,7 +12,7 @@ The name comes from the fact that this circuit can work even on batery that
 is almost totally depleted (0.7 V is enough).
 The best description of working principle that I found is [here](http://madscientisthut.com/wordpress/daily-blog/joule-thief-simulation-ii/attachment/jtsim/).
 
-It's so easy to build it that I did it just to see it live. Insted of typical
+It's so easy to build it that I did it just to see it live. Instead of typical
 toroid 1:1 transformer I used transformer unsoldered from broken phone charger.
 
 ![joule thief](006-1.jpg)
