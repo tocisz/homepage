@@ -31,7 +31,7 @@ that the frequency is around 210 kHz, but when I switch transformer windings it 
 27.9 kHz. I guess that's expected for not a 1:1 transformer.
 
 On the next day I enhanced the program to record and print input high/low timings.
-Here are measured times (in µs) for non-inverted windings:
+Here are measured times (in µs):
 ```
 1 1,75
 0 2,98
@@ -41,7 +41,7 @@ Here are measured times (in µs) for non-inverted windings:
 1 1,73
 0 3,00
 ```
-And here are measured times for inverted windings:
+And here are measured times for switched windings:
 ```
 1 9,68
 0 26,19
