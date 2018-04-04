@@ -8,7 +8,7 @@ Citing [Wikipedia](https://en.wikipedia.org/wiki/Joule_thief):
 > typically used for driving small loads. This circuit is also known by other names such as blocking oscillator,
 > joule ringer, vampire torch.
 
-The name comes from the fact that the circuit can work even on battery that
+The name comes from the fact that the circuit can work even on a battery that
 is almost totally depleted (0.7 V is enough).
 The best description of the working principle that I found is [here](http://madscientisthut.com/wordpress/daily-blog/joule-thief-simulation-ii/attachment/jtsim/).
 
