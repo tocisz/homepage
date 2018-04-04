@@ -31,7 +31,8 @@ that frequency is ~210 kHz. When I switch transformer windings it goes down to
 
 On the next day I enhanced program to record and print timings. Here are measured
 times (in ms) for non-inverted windings:
-<code>
+
+```
 1 1,75
 0 2,98
 1 1,72
@@ -39,9 +40,9 @@ times (in ms) for non-inverted windings:
 ...
 1 1,73
 0 3,00
-</code>
+```
 And here are measured times for inverted windings:
-<code>
+```
 1 9,68
 0 26,19
 1 9,69
@@ -49,9 +50,9 @@ And here are measured times for inverted windings:
 ...
 1 9,68
 0 26,19
-</code>
-
+```
 The source code is as usually [on Github](https://github.com/tocisz/forthplay/blob/master/exti/exti2.fs).
 
 *Question 1.*
+
 How to use input capture on STM32? Any piece of advice?
