@@ -29,10 +29,10 @@ STM32  3.3 --- VCC  LCD
 
 I used code from ... TODO.
 
-## 2.4'' TFT LCD
+## ILI93.. 2.4'' TFT LCD
 
 This one has `320`x`240` resolution and is touch sensitive.
 
 Connect as in [this article](https://www.instructables.com/id/Fast-Portable-and-Affordable-Oscilloscope-and-Indu/).
 
-Some documentation can be found [here](http://misc.ws/category/arduino/).
+Some documentation can be found [here](http://misc.ws/2013/11/08/touch-screen-shield-for-arduino-uno/).
