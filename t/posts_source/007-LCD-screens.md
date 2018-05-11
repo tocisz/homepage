@@ -4,9 +4,11 @@ date: 2018-05-10
 # LCD Screens
 
 Nothing really interesting here. I just want to document how to connect two
-LCD screens to a blue pill. Actually it's not a blue pill. It's black.
+LCD screens to a blue pill.
+Actually it's not a [blue pill](http://wiki.stm32duino.com/index.php?title=Blue_Pill).
+It's [black](http://wiki.stm32duino.com/index.php?title=Black_Pill).
 Some pins are connected differently. E.g. onboard LED is not on `PC13`,
-but on `PC15`.
+but on `PB12`.
 
 ## ST7735 1.8'' TFT LCD
 
