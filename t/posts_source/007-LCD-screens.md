@@ -27,7 +27,9 @@ STM32  3.3 --- VCC  LCD
        3.3 --- LED
 ```
 
-I used code from ... TODO.
+I used [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library)
+version [ported to STM32](https://github.com/rogerclarkmelbourne/Arduino_STM32/tree/master/STM32F1/libraries/Adafruit_GFX_AS).
+To test it I took example from original Adafruit library and changed pin numbers.
 
 ## ILI93.. 2.4'' TFT LCD
 
