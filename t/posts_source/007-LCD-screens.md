@@ -34,7 +34,7 @@ version [ported to STM32](https://github.com/rogerclarkmelbourne/Arduino_STM32/t
 To test it I took example from original Adafruit library and changed pin numbers.
 
 ```diff
---- /home/cichy/Arduino/libraries/Adafruit_ST7735/examples/graphicstest/graphicstest.ino	2018-03-30 22:13:14.870036019 +0200
+--- libraries/Adafruit_ST7735/examples/graphicstest/graphicstest.ino	2018-03-30 22:13:14.870036019 +0200
 +++ st7735-test/st7735-test.ino	2018-03-31 22:51:22.025625036 +0200
 @@ -21,17 +21,17 @@
    MIT license, all text above must be included in any redistribution
