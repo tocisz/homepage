@@ -31,6 +31,33 @@ I used [Adafruit_GFX library](https://github.com/adafruit/Adafruit-GFX-Library)
 version [ported to STM32](https://github.com/rogerclarkmelbourne/Arduino_STM32/tree/master/STM32F1/libraries/Adafruit_GFX_AS).
 To test it I took example from original Adafruit library and changed pin numbers.
 
+```diff
+--- /home/cichy/Arduino/libraries/Adafruit_ST7735/examples/graphicstest/graphicstest.ino	2018-03-30 22:13:14.870036019 +0200
++++ st7735-test/st7735-test.ino	2018-03-31 22:51:22.025625036 +0200
+@@ -21,17 +21,17 @@
+   MIT license, all text above must be included in any redistribution
+  ****************************************************/
+
+-#include <Adafruit_GFX.h>    // Core graphics library
++#include <Adafruit_GFX_AS.h>    // Core graphics library
+ #include <Adafruit_ST7735.h> // Hardware-specific library
+ #include <SPI.h>
+
+
+ // For the breakout, you can use any 2 or 3 pins
+ // These pins will also work for the 1.8" TFT shield
+-#define TFT_CS     10
+-#define TFT_RST    9  // you can also connect this to the Arduino reset
++#define TFT_CS     PA0
++#define TFT_RST    PA1  // you can also connect this to the Arduino reset
+                       // in which case, set this #define pin to 0!
+-#define TFT_DC     8
++#define TFT_DC     PC13 // A0
+
+ // Option 1 (recommended): must use the hardware SPI pins
+ // (for UNO thats sclk = 13 and sid = 11) and pin 10 must be
+```
+
 ## ILI93.. 2.4'' TFT LCD
 
 This one has `320`x`240` resolution and is touch sensitive.
