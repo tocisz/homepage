@@ -31,6 +31,7 @@ The little black chip below motor labeled HU is one of three sensors that I
 found in my BLDC motor.
 Very conveniently rotor of the motor has magnets around it, so its position can
 be detected by these little sensors.
+
 ![Hall effect sensor below BLDC](005-2.jpg)
 
 The hardest part was connecting to it. Soldering thin wire with a simple soldering
