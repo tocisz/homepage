@@ -62,8 +62,16 @@ To test it I took example from original Adafruit library and changed pin numbers
 
 ## ILI93.. 2.4'' TFT LCD
 
-This one has `320`x`240` resolution and is touch sensitive.
+This one has `320`x`240` resolution and is touch sensitive. Image can be sent
+serially or by 8-bit data bus. I used data bus for the speed sake.
 
-Connect as in [this article](https://www.instructables.com/id/Fast-Portable-and-Affordable-Oscilloscope-and-Indu/).
+![2.4'' LCD](007-2.jpg)
 
-Some documentation can be found [here](http://misc.ws/2013/11/08/touch-screen-shield-for-arduino-uno/).
+Adafruit library port can be found [here](https://github.com/iwalpola/Adafruit_ILI9341_8bit_STM).
+It was modified by an author of [this instructable](https://www.instructables.com/id/Fast-Portable-and-Affordable-Oscilloscope-and-Indu/) to use different pins. Unfortunately I couldn't find it on Github.
+There is [zip file to download](https://cdn.instructables.com/ORIG/F93/WPIS/J1CENFTO/F93WPISJ1CENFTO.zip).
+
+An author of the first library admits that [this one](https://github.com/stevstrong/Adafruit_TFTLCD_8bit_STM32) is better.
+I'm thinking about porting Oscilloscope code to it.
+
+Some documentation about display and drivers can be found [here](http://misc.ws/2013/11/08/touch-screen-shield-for-arduino-uno/).
