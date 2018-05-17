@@ -69,9 +69,9 @@ serially or by 8-bit data bus. I used data bus for the speed sake.
 
 Adafruit library port can be found [here](https://github.com/iwalpola/Adafruit_ILI9341_8bit_STM).
 It was modified by an author of [this instructable](https://www.instructables.com/id/Fast-Portable-and-Affordable-Oscilloscope-and-Indu/) to use different pins. Unfortunately I couldn't find it on Github.
-There is [zip file to download](https://cdn.instructables.com/ORIG/F93/WPIS/J1CENFTO/F93WPISJ1CENFTO.zip).
+There is [a zip file to download](https://cdn.instructables.com/ORIG/F93/WPIS/J1CENFTO/F93WPISJ1CENFTO.zip).
 
 An author of the first library admits that [this one](https://github.com/stevstrong/Adafruit_TFTLCD_8bit_STM32) is better.
-I'm thinking about porting Oscilloscope code to it.
+I'm thinking about porting oscilloscope code to it.
 
 Some documentation about display and drivers can be found [here](http://misc.ws/2013/11/08/touch-screen-shield-for-arduino-uno/).
