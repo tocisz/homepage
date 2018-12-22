@@ -4,10 +4,10 @@ import re
 import codecs
 import markdown
 
-INPUT = "t/posts_source"
-OUTPUT = "t/posts"
-HEAD = "t/layouts/header.php"
-FOOT = "t/layouts/footer.php"
+INPUT = "posts_source"
+OUTPUT = "posts"
+HEAD = "layouts/header.php"
+FOOT = "layouts/footer.php"
 
 def title_from_path(input):
     return re.sub(r'.md$','', input.name).replace("-", " ")
