@@ -6,7 +6,6 @@ import codecs
 import markdown
 from io import StringIO
 import hashlib
-from base64 import b64decode, b64encode
 
 import json
 import boto3
