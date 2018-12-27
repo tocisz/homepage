@@ -40,7 +40,7 @@ By connecting them right way I was able to reverse current flow for one coil wit
 By using this board I was able to verify that my stepper motor actually works and find out what resistor I should use to limit the current flowing trough it.
 
 Knowing that it works I connected it trough [L293D](http://www.alldatasheet.com/view.jsp?Searchword=L293D) to
-[Forth enabled blue pill](http://tomasz-cichocki.pl/t/posts/001-play-with-forth-and-STM32). Surprisingly, everything worked with no problems.
+[Forth enabled blue pill](001-Play-with-forth-and-STM32). Surprisingly, everything worked with no problems.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mt8P-PPIaGw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
