@@ -69,6 +69,29 @@ def local_etag(sourcePath):
                 hash.update(block)
         return hash.hexdigest()
 
+def upload_text(key, body):
+    md5 = hashlib.md5(body.encode('utf-8')).hexdigest()
+    etag = s3_etag(key)
+    if md5 != etag:
+        print("MD5: {}".format(md5))
+        print("etag: {}".format(etag))
+        s3.put_object(
+            Bucket = config['bucket'],
+            Key = key,
+            Body = body,
+            ACL = 'public-read',
+            ContentType = 'text/html',
+            # ContentMD5 = md5
+        )
+        s3.put_object(
+            Bucket = config['bucket'],
+            Key = 't/' + key,
+            ACL = 'public-read',
+            WebsiteRedirectLocation = '/'+ key
+        )
+    else:
+        print("Checksums match. Not uploading.")
+
 def process(input, index, outdir):
     fout = short_article_path(input)
     title = title_from_path(input)
@@ -91,38 +114,23 @@ def process(input, index, outdir):
 </div>
 """)
     output.write(codecs.open(FOOT, mode="r", encoding="utf-8").read())
-    md5 = hashlib.md5(output.getvalue().encode('utf-8')).hexdigest()
-    etag = s3_etag(outdir + '/' + fout)
-    print("MD5: {}".format(md5))
-    print("etag: {}".format(etag))
-    if md5 != etag:
-        s3.put_object(
-            Bucket = config['bucket'],
-            Key = outdir + '/' + fout,
-            Body = output.getvalue(),
-            ACL = 'public-read',
-            ContentType = 'text/html',
-            # ContentMD5 = md5
-        )
-        s3.put_object(
-            Bucket = config['bucket'],
-            Key = 't/' + outdir + '/' + fout,
-            ACL = 'public-read',
-            WebsiteRedirectLocation = '/'+ outdir + '/' + fout
-        )
     # output_file = codecs.open(os.path.join(outdir,fout), "w",
     #                       encoding="utf-8",
     #                       errors="xmlcharrefreplace"
     #                       )
     # output_file.write(output.getvalue())
-    output.close()
 
-def upload(f):
+    key = outdir + '/' + fout
+    body = output.getvalue()
+    output.close()
+    upload_text(key, body)
+
+def upload_file(f):
     md5 = local_etag(f)
     etag = s3_etag(OUTPUT + '/' + f.name)
-    print("MD5: {}".format(md5))
-    print("etag: {}".format(etag))
     if md5 != etag:
+        print("MD5: {}".format(md5))
+        print("etag: {}".format(etag))
         if f.suffix in config['suffix_to_type']:
             ct = config['suffix_to_type'][f.suffix]
         else:
@@ -136,24 +144,41 @@ def upload(f):
                 ACL = 'public-read',
                 ContentType = ct
             )
+    else:
+        print("Checksums match. Not uploading.")
     # shutil.copy(f, os.path.join(OUTPUT,f.name))
 
-def generate_index(posts):
+def generate_index(posts, path_prefix=""):
     output = "<p>"
     if len(posts) > 0:
         output += "<ul>"
     for f in posts:
         output += "<li><a href=\"{path}\">{title}</a></li>".format(
-                        path = short_article_path(f), title = title_from_path(f)
+                        path = path_prefix+short_article_path(f), title = title_from_path(f)
                 )
     if len(posts) > 0:
         output += "</ul>"
     output += "</p>"
     return output
 
+def generate_frontpage(posts):
+    title = 'The blog archive';
+    output = StringIO()
+    output.write(codecs.open(HEAD, mode="r", encoding="utf-8").read().replace("<?php echo $title ?>",title))
+    output.write("""<div class="container-fluid">
+<h1>{}</h1>""".format(title))
+    output.write(generate_index(posts, OUTPUT+"/"))
+    output.write("</div>")
+    output.write(codecs.open(FOOT, mode="r", encoding="utf-8").read())
+    return output.getvalue()
+
 posts = [p for p in Path(INPUT).glob("*.md")]
 posts.reverse()
 index = generate_index(posts)
+
+print("Processing index.html")
+front = generate_frontpage(posts)
+upload_text("index.html", front)
 
 for f in Path(INPUT).glob("*"):
     if f.suffix == '.md':
@@ -161,4 +186,4 @@ for f in Path(INPUT).glob("*"):
         process(f, index, OUTPUT)
     elif f.is_file():
         print("Uploading {}".format(f.name))
-        upload(f)
+        upload_file(f)
