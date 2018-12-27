@@ -99,7 +99,7 @@ def process(input, index, outdir):
     text = input_file.read()
     html = markdown.markdown(text, extensions = ['extra','meta'], output_format="html5")
     output = StringIO()
-    output.write(codecs.open(HEAD, mode="r", encoding="utf-8").read().replace("<?php echo $title ?>",title))
+    output.write(codecs.open(HEAD, mode="r", encoding="utf-8").read().format(title=title))
     output.write("""<div class="container-fluid">
   <div class="row">
     <div class="col-12 col-md-3 push-md-9 bd-sidebar">
@@ -164,7 +164,7 @@ def generate_index(posts, path_prefix=""):
 def generate_frontpage(posts):
     title = 'The blog archive';
     output = StringIO()
-    output.write(codecs.open(HEAD, mode="r", encoding="utf-8").read().replace("<?php echo $title ?>",title))
+    output.write(codecs.open(HEAD, mode="r", encoding="utf-8").read().format(title=title))
     output.write("""<div class="container-fluid">
 <h1>{}</h1>""".format(title))
     output.write(generate_index(posts, OUTPUT+"/"))
