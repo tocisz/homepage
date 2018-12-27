@@ -124,9 +124,9 @@ def process(input, index, outdir):
     output.close()
     upload_text(key, body)
 
-def upload_file(f):
+def upload_file(f, outdir):
     md5 = local_etag(f)
-    etag = s3_etag(OUTPUT + '/' + f.name)
+    etag = s3_etag(outdir + '/' + f.name)
     if md5 != etag:
         print("MD5: {}".format(md5))
         print("etag: {}".format(etag))
@@ -138,7 +138,7 @@ def upload_file(f):
         with f.open('rb') as fo:
             s3.put_object(
                 Bucket = config['bucket'],
-                Key = OUTPUT + '/' + f.name,
+                Key = outdir + '/' + f.name,
                 Body = fo,
                 ACL = 'public-read',
                 ContentType = ct
@@ -146,6 +146,18 @@ def upload_file(f):
     else:
         print("Checksums match. Not uploading.")
     # shutil.copy(f, os.path.join(OUTPUT,f.name))
+
+def upload_dir(dir, outdir=None):
+    print("Going into {}".format(dir))
+    if outdir is None:
+        outdir = dir
+    for f in Path(dir).glob("*"):
+        if f.suffix == '.md':
+            print("Processing {}".format(f.name))
+            process(f, index, outdir)
+        elif f.is_file():
+            print("Uploading {}".format(f.name))
+            upload_file(f, outdir)
 
 def generate_index(posts, path_prefix=""):
     output = "<p>"
@@ -178,10 +190,6 @@ index = generate_index(posts)
 front = generate_frontpage(posts)
 upload_text("index.html", front)
 
-for f in Path(INPUT).glob("*"):
-    if f.suffix == '.md':
-        print("Processing {}".format(f.name))
-        process(f, index, OUTPUT)
-    elif f.is_file():
-        print("Uploading {}".format(f.name))
-        upload_file(f)
+upload_dir(INPUT, OUTPUT)
+upload_dir("css")
+upload_dir("404")
