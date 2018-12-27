@@ -1,6 +1,5 @@
-===
 date: 2018-03-04
-===
+
 # Constant acceleration revisited
 ## What is wrong?
 In [the last article](003-Digital-pendulum) the first section is about constant

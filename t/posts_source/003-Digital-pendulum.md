@@ -1,6 +1,5 @@
-===
 date: 2018-02-27
-===
+
 # Digital pendulum
 ## Constant acceleration
 

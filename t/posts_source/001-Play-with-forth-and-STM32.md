@@ -1,6 +1,5 @@
-===
 date: 2018-02-22
-===
+
 # STM32F103C8 tutorial
 Originally published on [Github](https://github.com/tocisz/forthplay). Some code samples can be found there too.
 

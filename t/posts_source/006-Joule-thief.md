@@ -1,6 +1,5 @@
-===
 date: 2018-04-04
-===
+
 # Joule thief
 
 Citing [Wikipedia](https://en.wikipedia.org/wiki/Joule_thief):

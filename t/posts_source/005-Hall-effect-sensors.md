@@ -1,6 +1,5 @@
-===
 date: 2018-03-10
-===
+
 # Hall effect sensors
 Today's edition of my scrap electronic series is about
 [hall effect](https://en.wikipedia.org/wiki/Hall_effect) sensors.

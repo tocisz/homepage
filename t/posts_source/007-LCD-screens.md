@@ -1,6 +1,5 @@
-===
 date: 2018-05-10
-===
+
 # LCD Screens
 
 Nothing really interesting here. I just want to document how to connect two

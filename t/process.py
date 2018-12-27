@@ -1,4 +1,5 @@
 import os
+import shutil
 from pathlib import Path
 import re
 import codecs
@@ -16,12 +17,11 @@ def short_article_path(input):
     return re.sub(r'.md$','.html', input.name)
 
 def process(input, index, outdir):
-    print(input)
     fout = short_article_path(input)
     title = title_from_path(input)
     input_file = input.open(mode="r", encoding="utf-8")
     text = input_file.read()
-    html = markdown.markdown(text, output_format="html5")
+    html = markdown.markdown(text, extensions = ['extra','meta'], output_format="html5")
     output_file = codecs.open(os.path.join(outdir,fout), "w",
                           encoding="utf-8",
                           errors="xmlcharrefreplace"
@@ -61,5 +61,10 @@ def generate_index(posts):
 posts = [p for p in Path(INPUT).glob("*.md")]
 index = generate_index(posts)
 
-for f in posts:
-    process(f, index, OUTPUT)
+for f in Path(INPUT).glob("*"):
+    if f.suffix == '.md':
+        print("Processing {}".format(f.name))
+        process(f, index, OUTPUT)
+    elif f.is_file():
+        print("Copying {}".format(f.name))
+        shutil.copy(f, os.path.join(OUTPUT,f.name))
