@@ -171,11 +171,10 @@ def generate_frontpage(posts):
     output.write(codecs.open(FOOT, mode="r", encoding="utf-8").read())
     return output.getvalue()
 
+print("Processing index.html")
 posts = [p for p in Path(INPUT).glob("*.md")]
 posts.reverse()
 index = generate_index(posts)
-
-print("Processing index.html")
 front = generate_frontpage(posts)
 upload_text("index.html", front)
 
